@@ -1,5 +1,6 @@
 const app=require('express')();
 const hbs=require('hbs');
+const port= process.env.PORT || 3000;
 app.use((req,res,next)=>{
     res.render('maintenance.hbs');
     console.log(req.url)
@@ -16,6 +17,6 @@ app.get('/Home',(req,res)=>{
         Copyright : 'All right reserved - 2021'
     });
 })
-app.listen(3000,()=>{
-    console.log('App is running on port : 3000');
+app.listen(port,()=>{
+    console.log(`App is running on port : ${port}`);
 })
